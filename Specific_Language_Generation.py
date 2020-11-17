@@ -13,7 +13,7 @@ def make_similar(w, alphabet):
     indexes = list(range(len(new)))
     # switch characters
     num_switches = random.choice(range(3))
-    shuffle(indexes)
+    random.shuffle(indexes)
     indexes_to_switch = indexes[:num_switches]
     for i in indexes_to_switch:
         new[i] = random.choice(alphabet)
@@ -90,4 +90,4 @@ def get_balanced_parantheses_train_set(n,short,longg,lengths=None,max_train_samp
     return make_train_set_for_target(balanced_parantheses,alphabet_bp,lengths=lengths,\
         max_train_samples_per_length=max_train_samples_per_length,\
         search_size_per_length=search_size_per_length,\
-        provided_examples=all_words):
+        provided_examples=all_words), alphabet_bp
